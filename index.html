@@ -11,122 +11,109 @@
     integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
     crossorigin="anonymous"
   />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.x/css/all.min.css"
+  />
+
   <link rel="stylesheet" href="/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
   <!-- ============================================== -->
   <body>
-    <header>
-      <a href="#" class="logo">ZacMotors</a>
+    <nav class="navbar">
+      <div class="logo">
+        <button>
+          <img src="/assests/img/Zac-logo (2).png" alt="" />
+        </button>
+      </div>
       <button class="toggle" id="nav-toggle">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <nav id="nav">
-        <a href="#">Home</a>
-        <a href="about Us.html">About Us</a>
-        <a href="#">Dealership</a>
-        <a href="brand.html">Car Brands</a>
-        <a href="#">Models</a>
-        <a href="#">Contact Us</a>
-      </nav>
-    </header>
+
+      <div class="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about Us.html">About Us</a></li>
+          <li><a href="#">Dealership</a></li>
+          <li><a href="brand.html">Car Brands</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <a class="btn" href="brand.html">Buy a Car</a>
+      </div>
+    </nav>
+
     <!-- =================================================== -->
-    <section class="cars">
-      <div class="slider">
-        <div class="slides">
-          <img
-            src="/assests/Cars-imgs/edwin-chen-yzUDX3MxSf4-unsplash.jpg"
-            alt="Luxury Car Background 1"
-            loading="lazy"
-          />
-          <img
-            src="/assests/Cars-imgs/franco-debartolo-5QblgbvXG_0-unsplash.jpg"
-            alt="Luxury Car Background 2"
-            loading="lazy"
-          />
-          <img
-            src="/assests/Cars-imgs/devon-janse-van-rensburg-yoqHLUayUTg-unsplash.jpg"
-            alt="Luxury Car Background 3"
-            loading="lazy"
-          />
-          <img
-            src="/assests/Cars-imgs/vadym-kudriavtsev-HN0cB0cauHU-unsplash.jpg"
-            alt="Luxury Car Background 4"
-            loading="lazy"
-          />
+    <section class="hero">
+      <div class="hero-overlay">
+        <div class="hero-text">
+          <h1>Experience Refined Luxury</h1>
+          <p>
+            Choose from Nigeria’s finest selection of high-end vehicles and
+            embark on a journey of elegance.
+          </p>
+          <a href="brand.html" class="cta-btn">Explore more</a>
         </div>
-        <div class="arrow left" aria-label="Previous slide">&#8249;</div>
-        <div class="arrow right" aria-label="Next slide">&#8250;</div>
-      </div>
-      <div class="content">
-        <h1>Experience Refined Luxury</h1>
-        <p>
-          Choose from Nigeria’s finest selection of high-end vehicles and embark
-          on a journey of elegance.
-        </p>
-        <a href="#" class="btn">Buy A Car</a>
-      </div>
-      <div class="brands">
-        <!-- Replace src with your brand logo images -->
-        <img src="/assests/Cars-imgs/BMW-logo.png" alt="BMW" loading="lazy" />
-        <img
-          src="/assests/Cars-imgs/rolls royce logo.jpg"
-          alt="Rolls-Royce"
-          loading="lazy"
-        />
-        <img src="/assests/Cars-imgs/ford logo.png" alt="Ford" loading="lazy" />
-        <img
-          src="/assests/Cars-imgs/jaguar logo.png"
-          alt="Jaguar & Land Rover"
-          loading="lazy"
-        />
-        <img
-          src="/assests/Cars-imgs/renault logo.png"
-          alt="Renault"
-          loading="lazy"
-        />
-        <img
-          src="/assests/Cars-imgs/geely logo.jpg"
-          alt="Geely"
-          loading="lazy"
-        />
       </div>
     </section>
-    <!-- ================================== -->
+
+    <section class="search-box">
+      <select>
+        <option>Select Brand</option>
+        <option>BMW</option>
+        <option>Rolls-Royce</option>
+        <option>Mercedes</option>
+        <option>jaguar</option>
+      </select>
+
+      <select>
+        <option>Select Model</option>
+        <option>2024</option>
+        <option>2023</option>
+      </select>
+
+      <select>
+        <option>Select Location</option>
+        <option>Lagos</option>
+        <option>Abuja</option>
+      </select>
+
+      <select>
+        <option>Select Type of Car</option>
+        <option>Sports</option>
+        <option>SUV</option>
+        <option>Truck</option>
+      </select>
+
+      <button class="search-btn"><i class="fas fa-search"></i> Search</button>
+    </section>
 
     <!-- ======================================== -->
+
     <section class="about-section">
-      <div class="about-image-wrapper">
+      <div class="about-image">
         <img
-          class="main-img"
-          src="/assests/Cars-imgs/martin-katler-YI-9-n4232c-unsplash.jpg"
-          alt="Luxury Car / Service"
-          loading="lazy"
-        />
-        <img
-          class="overlay-img"
-          src="/assests/Cars-imgs/martin-katler-wx-XBLK1bWA-unsplash.jpg"
-          alt="Secondary Image"
-          loading="lazy"
+          src="assests/img/grand-luxury-chauffeur-6ltjyXaTYP4-unsplash (1).jpg"
+          alt="Car Front View"
         />
       </div>
       <div class="about-content">
-        <h2>Buy Luxury Car with Excellence in Service & Quality</h2>
+        <h2>About</h2>
         <p>
           ZacMotors is a reputable car company in Nigeria that specializes in
           luxury and exotic vehicles. Their fleet consists of a wide variety of
           high-end cars, including Rolls-Royce, BMW, Jaguar, Ford, and many
-          more.
+          more....
         </p>
-        <p>
-          With their exceptional customer service, experienced team, and
-          competitive prices, ZacMotors has become a go-to choice for those
-          looking to buy a car in Nigeria. One of the key advantages of buying
-          from ZacMotors is the flexibility.
-        </p>
+
+        <a class="read-more-btn" href="about Us.html">Read More</a>
       </div>
     </section>
+
     <!-- =========================================== -->
     <section class="fleet-section">
       <div>
@@ -141,7 +128,7 @@
         <!-- Fleet Item 1 -->
         <div class="fleet-card">
           <img
-            src="/assests/Cars-imgs/vaclav-pechar--RQe6ulR-gw-unsplash.jpg"
+            src="/assests/img/vaclav-pechar--RQe6ulR-gw-unsplash.jpg"
             alt="Renault"
             loading="lazy"
           />
@@ -158,7 +145,7 @@
         <!-- Fleet Item 2 -->
         <div class="fleet-card">
           <img
-            src="/assests/Cars-imgs/mate-vanyek-HxWeWYLrgIY-unsplash.jpg"
+            src="/assests/img/mate-vanyek-HxWeWYLrgIY-unsplash.jpg"
             alt="BMW"
             loading="lazy"
           />
@@ -175,7 +162,7 @@
         <!-- Fleet Item 3 -->
         <div class="fleet-card">
           <img
-            src="/assests/Cars-imgs/harry-singh-pYp6fKYcvv8-unsplash.jpg"
+            src="/assests/img/harry-singh-pYp6fKYcvv8-unsplash.jpg"
             alt="Rolls-Royce"
             loading="lazy"
           />
@@ -192,7 +179,7 @@
         <!-- Fleet Item 4 -->
         <div class="fleet-card">
           <img
-            src="/assests/Cars-imgs/haryad-art-2yBawNkiAbc-unsplash.jpg"
+            src="/assests/img/haryad-art-2yBawNkiAbc-unsplash.jpg"
             alt="Porsche"
             loading="lazy"
           />
@@ -215,7 +202,7 @@
         </p>
         <a
           href="#booking"
-          style="color: #ff6b35; text-decoration: none; font-weight: bold"
+          style="color: #000000; text-decoration: none; font-weight: bold"
           >View Full Fleet →</a
         >
       </div>
@@ -275,14 +262,18 @@
             premium vehicles, experienced VIP benefits, and pre-pay with secure
             delivery for complete peace.
           </p>
-          <a class="cta" href="#">Find Your Brand</a>
+          <a class="cta" href="brand.html">Find Your Brand</a>
         </div>
       </div>
     </section>
     <!-- ============================================ -->
     <footer class="footer" aria-label="Footer">
       <div class="col">
-        <div class="brand">ZacMotors</div>
+        <div class="footer-logo">
+          <button>
+            <img src="/assests/img/Zac-logo (2).png" alt="" />
+          </button>
+        </div>
         <div class="small">
           &copy; 2025 Coscharis Motors. All rights reserved.
         </div>
