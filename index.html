@@ -42,22 +42,68 @@
         </ul>
       </div>
 
-      <div>
-        <a class="btn" href="brand.html">Buy a Car</a>
+      <div class="anchor">
+        <a href="brand.html">Buy a Car</a>
       </div>
     </nav>
 
     <!-- =================================================== -->
-    <section class="hero">
-      <div class="hero-overlay">
-        <div class="hero-text">
+    <!-- Modified HTML: Removed buttons from slides, added stagnant button container -->
+    <section class="hero-slider">
+      <div
+        class="slide active"
+        style="background-image: url('/assests/img/devon-janse.jpg')"
+      >
+        <div class="slide-content">
           <h1>Experience Refined Luxury</h1>
           <p>
             Choose from Nigeria’s finest selection of high-end vehicles and
             embark on a journey of elegance.
           </p>
-          <a href="brand.html" class="cta-btn">Explore more</a>
         </div>
+      </div>
+
+      <div
+        class="slide"
+        style="background-image: url('/assests/img/rolls-royce-white.jpg')"
+      >
+        <div class="slide-content">
+          <h1>Experience True Luxury</h1>
+          <p>Elegance, comfort, and craftsmanship refined to perfection.</p>
+        </div>
+      </div>
+
+      <div
+        class="slide"
+        style="background-image: url('/assests/img/jaguar-white.jpg')"
+      >
+        <div class="slide-content">
+          <h1>Unleash Performance</h1>
+          <p>Bold design meets dynamic driving power.</p>
+        </div>
+      </div>
+
+      <div
+        class="slide"
+        style="background-image: url('/assests/img/vadym-kudriavtsev.jpg')"
+      >
+        <div class="slide-content">
+          <h1>Strength. Reliability. Adventure.</h1>
+          <p>Built to perform in every condition.</p>
+        </div>
+      </div>
+
+      <!-- Stagnant Hero Button -->
+      <div class="hero-btn-container">
+        <a href="#" class="hero-btn">Explore More</a>
+      </div>
+
+      <!-- Navigation -->
+      <div class="slider-nav">
+        <span class="nav-dot active"></span>
+        <span class="nav-dot"></span>
+        <span class="nav-dot"></span>
+        <span class="nav-dot"></span>
       </div>
     </section>
 
@@ -96,10 +142,7 @@
 
     <section class="about-section">
       <div class="about-image">
-        <img
-          src="assests/img/grand-luxury-chauffeur-6ltjyXaTYP4-unsplash (1).jpg"
-          alt="Car Front View"
-        />
+        <img src="assests/img/grand-luxury.jpg" alt="Car Front View" />
       </div>
       <div class="about-content">
         <h2>About</h2>
@@ -128,7 +171,7 @@
         <!-- Fleet Item 1 -->
         <div class="fleet-card">
           <img
-            src="/assests/img/vaclav-pechar--RQe6ulR-gw-unsplash.jpg"
+            src="/assests/img/vaclav-pechar.jpg"
             alt="Renault"
             loading="lazy"
           />
@@ -144,11 +187,7 @@
 
         <!-- Fleet Item 2 -->
         <div class="fleet-card">
-          <img
-            src="/assests/img/mate-vanyek-HxWeWYLrgIY-unsplash.jpg"
-            alt="BMW"
-            loading="lazy"
-          />
+          <img src="/assests/img/mate-vanyek.jpg" alt="BMW" loading="lazy" />
           <h3>BMW X6</h3>
           <ul style="list-style: none; padding: 0">
             <li>• 640 HP V10 Power</li>
@@ -162,7 +201,7 @@
         <!-- Fleet Item 3 -->
         <div class="fleet-card">
           <img
-            src="/assests/img/harry-singh-pYp6fKYcvv8-unsplash.jpg"
+            src="/assests/img/harry-singh.jpg"
             alt="Rolls-Royce"
             loading="lazy"
           />
@@ -178,11 +217,7 @@
 
         <!-- Fleet Item 4 -->
         <div class="fleet-card">
-          <img
-            src="/assests/img/haryad-art-2yBawNkiAbc-unsplash.jpg"
-            alt="Porsche"
-            loading="lazy"
-          />
+          <img src="/assests/img/haryad-art.jpg" alt="Porsche" loading="lazy" />
           <h3>Ford Explorer</h3>
           <ul style="list-style: none; padding: 0">
             <li>• 580 HP Twin-Turbo</li>
@@ -201,7 +236,7 @@
           location.
         </p>
         <a
-          href="#booking"
+          href="brand.html"
           style="color: #000000; text-decoration: none; font-weight: bold"
           >View Full Fleet →</a
         >
@@ -250,10 +285,6 @@
     </section>
     <!-- =========================================== -->
     <section class="screen">
-      <div class="window-bar">
-        <h2 class="window-pill">View All Brands</h2>
-      </div>
-
       <div class="heroo">
         <div class="heroo-inner">
           <h1 class="title">Start Your Journey Now</h1>
@@ -267,44 +298,58 @@
       </div>
     </section>
     <!-- ============================================ -->
-    <footer class="footer" aria-label="Footer">
-      <div class="col">
-        <div class="footer-logo">
-          <button>
-            <img src="/assests/img/Zac-logo (2).png" alt="" />
-          </button>
-        </div>
-        <div class="small">
-          &copy; 2025 Coscharis Motors. All rights reserved.
-        </div>
-      </div>
 
-      <div class="cols-center">
-        <div class="col">
-          <h4>Navigate</h4>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Column 1 -->
+        <div class="footer-col">
+          <img src="/assests/img/Zac-logo (2).png" alt="" />
           <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Brands</a></li>
-            <li><a href="#">Pricing</a></li>
-          </ul>
-        </div>
-        <div class="col">
-          <h4>Social</h4>
-          <ul>
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Facebook</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers with Us</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
           </ul>
         </div>
 
-        <div class="col contact">
-          <h4>Contact</h4>
-          <div class="small">
-            +234 8115620645<br />
-            ZacMotors.com
-          </div>
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <h3>Connect With Us</h3>
+          <ul>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Advertise with Us</a></li>
+            <li><a href="#">Become a Dealer</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+          <h3>Others</h3>
+          <ul>
+            <li><a href="#">Health Insurance</a></li>
+            <li><a href="#">Team Insurance</a></li>
+            <li><a href="#">Life Insurance</a></li>
+            <li><a href="#">Car Sales Trends</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4 (Newsletter) -->
+        <div class="footer-col newsletter">
+          <h3>Get weekly updates by our newsletter</h3>
+          <form>
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+            <div class="terms">
+              <input type="checkbox" id="agree" required />
+              <label for="agree">I agree with the terms and conditions</label>
+            </div>
+          </form>
         </div>
       </div>
+
+      <p class="copyright">© ZacMotors Pvt Ltd</p>
     </footer>
 
     <script src="/main.js"></script>

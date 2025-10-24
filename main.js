@@ -10,30 +10,31 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const slideTrack = document.querySelector(".slide-track");
-const dots = document.querySelectorAll(".dot");
-const totalSlides = dots.length;
+const slides = document.querySelectorAll(".slide");
+const points = document.querySelectorAll(".nav-dot");
+let index = 0;
 
-let currentIndex = 0;
+function changeSlide(n) {
+  slides.forEach((s) => s.classList.remove("active"));
+  points.forEach((d) => d.classList.remove("active"));
 
-function showSlide(index) {
-  slideTrack.style.transform = `translateX(-${index * 100}%)`;
-
-  // Update active dot
-  dots.forEach((dot) => dot.classList.remove("active"));
-  dots[index].classList.add("active");
+  slides[n].classList.add("active");
+  points[n].classList.add("active");
 }
 
-// Auto Slide every 4 seconds
-setInterval(() => {
-  currentIndex = (currentIndex + 1) % totalSlides;
-  showSlide(currentIndex);
-}, 4000);
+function nextSlide() {
+  index = (index + 1) % slides.length;
+  changeSlide(index);
+}
 
-// Manual click control
-dots.forEach((dot, index) => {
+points.forEach((dot, i) => {
   dot.addEventListener("click", () => {
-    currentIndex = index;
-    showSlide(currentIndex);
+    index = i;
+    changeSlide(i);
   });
 });
+
+setInterval(nextSlide, 5000); // Auto-slide every 5s
+
+setInterval(autoSlide, 5000);
+// ==================================================
