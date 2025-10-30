@@ -138,21 +138,21 @@ body {
 }
 
 .anchor a {
-  padding: 10px 20px;
+  padding: 15px 30px;
   text-decoration: none;
   background: #ff7f11;
   color: #0a1d3c;
   border: none;
   border-radius: 6px;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 15px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .anchor a:hover {
-  background: #ffffff;
-  color: #0a1d3c;
+  background: #0a1d3c;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -173,13 +173,13 @@ body {
   }
 
   .menu ul li a {
-    color: #ffffff;
+    color: #0a1d3c;
     font-size: 15px;
     font-weight: 700;
   }
 
   .anchor a {
-    padding: 9px 18px; /* Moderate button size */
+    padding: 10px 20px; /* Moderate button size */
     font-size: 14px;
   }
 }
@@ -2036,7 +2036,7 @@ body {
   display: block;
   width: 70px;
   height: 3px;
-  background-color: #d4af37; /* gold accent */
+  background-color: #ff7f11; /* gold accent */
   margin-top: 8px;
   border-radius: 2px;
 }
@@ -2055,67 +2055,79 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 992px) {
-  #achievements-recognition {
-    flex-direction: column;
-    padding: 60px 6%;
-  }
-
-  #achievements-recognition .arc-img,
-  #achievements-recognition .inner-ach {
-    width: 100%;
-  }
-
-  #achievements-recognition .arc-img img {
-    height: 350px;
-    object-position: center;
-  }
-
-  #achievements-recognition h2 {
-    font-size: 1.8rem;
-  }
-
-  #achievements-recognition p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  #achievements-recognition {
-    padding: 40px 5%;
-  }
-
-  #achievements-recognition .arc-img img {
-    height: 280px;
-  }
-
-  #achievements-recognition h2 {
-    font-size: 1.6rem;
-  }
-
-  #achievements-recognition p {
-    font-size: 0.95rem;
-  }
-}
-
-/* Responsive adjustments */
+/* Tablet styles (max-width: 768px) */
 @media (max-width: 768px) {
   #achievements-recognition {
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 20px;
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    gap: 2rem; /* Reduce gap */
+    padding: 20px; /* Adjust padding */
+    max-width: 100%; /* Full width on smaller screens */
   }
 
-  .inner-ach h2 {
-    font-size: 2rem;
+  #achievements-recognition .arc-img {
+    min-width: 250px; /* Slightly smaller min-width */
   }
 
-  #forward-looking h2 {
-    font-size: 1.8rem;
+  #achievements-recognition .arc-img img {
+    height: 100%; /* Adjust height to fit better */
   }
 
-  .arc-img {
-    max-width: 100%;
+  #achievements-recognition .inner-ach {
+    flex: 1; /* Reset flex to 1 for equal sizing in column */
+    max-width: 100%; /* Full width */
+    gap: 2rem; /* Adjust internal gap */
+  }
+
+  #achievements-recognition h2 {
+    font-size: 1.8rem; /* Smaller heading */
+    margin-bottom: 0.8rem;
+  }
+
+  #achievements-recognition h2::after {
+    width: 50px; /* Shorter accent line */
+    margin-top: 6px;
+  }
+
+  #achievements-recognition p {
+    font-size: 1rem; /* Slightly smaller text */
+    text-align: left; /* Change to left-align for better readability on mobile */
+  }
+}
+
+/* Desktop/Large Tablet styles (min-width: 769px and max-width: 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #achievements-recognition {
+    gap: 2.5rem; /* Moderate gap */
+    padding: 15px; /* Slight padding adjustment */
+    max-width: 1100px; /* Slightly smaller max-width */
+  }
+
+  #achievements-recognition .arc-img {
+    min-width: 280px; /* Adjust min-width */
+  }
+
+  #achievements-recognition .arc-img img {
+    height: 105%; /* Fine-tune height */
+  }
+
+  #achievements-recognition .inner-ach {
+    flex: 1.1; /* Slight adjustment to flex ratio */
+    gap: 2.2rem; /* Moderate internal gap */
+    max-width: 500px; /* Slightly smaller max-width */
+  }
+
+  #achievements-recognition h2 {
+    font-size: 1.9rem; /* Slightly smaller than default */
+    margin-bottom: 0.9rem;
+  }
+
+  #achievements-recognition h2::after {
+    width: 60px; /* Moderate accent line length */
+    margin-top: 7px;
+  }
+
+  #achievements-recognition p {
+    font-size: 1.02rem; /* Fine-tune text size */
   }
 }
 
