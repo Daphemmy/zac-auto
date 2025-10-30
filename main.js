@@ -10,6 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > 10) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
 const slides = document.querySelectorAll(".slide");
 const points = document.querySelectorAll(".nav-dot");
 let index = 0;

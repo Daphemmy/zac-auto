@@ -3,33 +3,807 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zac Motors - BMW</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Deals</title>
   </head>
-  <body>
-    <header id="main-header"></header>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 
-    <section class="brand-detail">
-      <h2>BMW: Heritage of Innovation</h2>
-      <img
-        src="images/bmw-heritage.jpg"
-        alt="BMW Heritage"
-        loading="lazy"
-        style="aspect-ratio: 16/9"
-      />
-      <p>BMW's legacy dates back to 1916...</p>
-      <div class="grid-container">
-        <div class="model-card">
-          <img src="images/bmw-model1.jpg" alt="BMW Model" loading="lazy" />
-          <h3>BMW X5</h3>
-          <p>Engine: 3.0L Turbo | Performance: 335 hp</p>
-        </div>
-        <!-- More models -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.x/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+    }
+    .multi {
+      background: url("/engine.jpg") no-repeat center/cover;
+      height: 700px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 10px 20px;
+      position: relative; /* Added to contain the absolutely positioned ::before */
+    }
+
+    .multi::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: rgba(10, 29, 60, 0.55);
+      z-index: 1; /* Adjusted to place behind text */
+      pointer-events: none;
+    }
+
+    .multi h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 1px;
+      color: #ffffff;
+      position: relative; /* Ensures text is positioned above overlay */
+      z-index: 2; /* Higher than overlay */
+    }
+
+    .multi p {
+      margin: 14px 0 26px;
+      font-size: 1.15rem;
+      color: #ffffff;
+      line-height: 1.6;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Media Queries for Mobile and Tablet */
+
+    /* Tablet Styles (768px to 1024px) */
+    @media (max-width: 1024px) and (min-width: 768px) {
+      .multi {
+        height: 600px; /* Reduce height for tablet */
+        padding: 8px 15px; /* Slightly reduce padding */
+      }
+
+      .multi h1 {
+        font-size: 2.2rem; /* Slightly smaller heading for tablet */
+        letter-spacing: 0.8px; /* Adjust letter spacing */
+      }
+
+      .multi p {
+        font-size: 1.1rem; /* Slightly smaller paragraph */
+        margin: 12px 0 20px; /* Adjust margins */
+      }
+    }
+
+    /* Mobile Styles (up to 767px) */
+    @media (max-width: 767px) {
+      .multi {
+        height: 500px; /* Further reduce height for mobile */
+        padding: 10px; /* Reduce padding for mobile */
+        text-align: center; /* Ensure centered text */
+      }
+
+      .multi h1 {
+        font-size: 1.8rem; /* Smaller heading for mobile */
+        letter-spacing: 0.5px; /* Reduce letter spacing */
+        line-height: 1.3; /* Adjust line height for better readability */
+      }
+
+      .multi p {
+        font-size: 1rem; /* Smaller paragraph for mobile */
+        margin: 10px 0 20px; /* Adjust margins */
+        line-height: 1.5; /* Adjust line height */
+      }
+    }
+
+    /* ========================================= */
+    /* Dealer Hero Section */
+    .dealer-hero-section {
+      padding: 50px 20px;
+      background-color: #f8f9fa; /* Light background for contrast */
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .dealer-hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 60px;
+      flex-wrap: wrap; /* For responsiveness */
+    }
+
+    .dealer-hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .dealer-hero-text .tag {
+      color: #0a1d3c;
+      padding: 15px 20px;
+      border-radius: 4px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .dealer-hero-text h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin: 0 0 20px 0;
+      color: #0a1d3c;
+    }
+
+    .dealer-hero-text h1 span {
+      color: #ff8c00;
+    }
+
+    .dealer-hero-text .sub {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background-color: #ff8c00;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .cta-btn:hover {
+      background-color: #0a1d3c;
+    }
+
+    .dealer-hero-image {
+      flex: 1;
+      position: relative;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .dealer-hero-image img {
+      width: 100%;
+      max-width: 500px;
+      height: 600px;
+      border-radius: 8px;
+    }
+
+    .cash-note {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #28a745;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      font-weight: bold;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cash-note.small {
+      top: 80px;
+      left: 10px;
+      width: 50px;
+      height: 50px;
+      font-size: 1.2rem;
+    }
+
+    /* Dealer Features */
+    .dealer-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-box {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-box h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #0a1d3c;
+    }
+
+    .feature-box p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .feature-box img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    /* Media Queries for Mobile and Tablet */
+
+    /* Tablet Styles (768px to 1024px) */
+    @media (max-width: 1024px) and (min-width: 768px) {
+      .dealer-hero-section {
+        padding: 40px 15px; /* Slightly reduce padding for tablet */
+      }
+
+      .dealer-hero {
+        gap: 30px; /* Reduce gap for tablet */
+        margin-bottom: 40px;
+      }
+
+      .dealer-hero-text h1 {
+        font-size: 2.2rem; /* Slightly smaller heading for tablet */
+      }
+
+      .dealer-hero-text .tag {
+        font-size: 1.3rem; /* Smaller tag */
+        padding: 12px 18px;
+      }
+
+      .dealer-hero-text .sub {
+        font-size: 1rem; /* Smaller subtext */
+        margin-bottom: 20px;
+      }
+
+      .cta-btn {
+        padding: 10px 20px; /* Smaller button */
+      }
+
+      .dealer-hero-image img {
+        height: 500px; /* Reduce image height for tablet */
+      }
+
+      .cash-note {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+      }
+
+      .cash-note.small {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+
+      .dealer-features {
+        gap: 20px; /* Reduce gap for tablet */
+      }
+
+      .feature-box {
+        padding: 15px; /* Reduce padding */
+      }
+
+      .feature-box h3 {
+        font-size: 1.3rem; /* Smaller heading */
+      }
+
+      .feature-box img {
+        height: 180px; /* Slightly smaller image */
+      }
+    }
+
+    /* Mobile Styles (up to 767px) */
+    @media (max-width: 767px) {
+      .dealer-hero-section {
+        padding: 30px 10px; /* Reduce padding for mobile */
+      }
+
+      .dealer-hero {
+        flex-direction: column; /* Stack vertically on mobile */
+        text-align: center; /* Center align for mobile */
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .dealer-hero-text {
+        min-width: auto; /* Remove min-width for stacking */
+      }
+
+      .dealer-hero-text h1 {
+        font-size: 1.8rem; /* Smaller heading for mobile */
+        margin-bottom: 15px;
+      }
+
+      .dealer-hero-text .tag {
+        font-size: 1.2rem; /* Smaller tag */
+        padding: 10px 15px;
+      }
+
+      .dealer-hero-text .sub {
+        font-size: 1rem; /* Smaller subtext */
+        margin-bottom: 20px;
+      }
+
+      .cta-btn {
+        padding: 12px 24px; /* Keep button size for touch */
+        width: 100%; /* Full width for better usability */
+        text-align: center;
+      }
+
+      .dealer-hero-image {
+        min-width: auto; /* Remove min-width */
+      }
+
+      .dealer-hero-image img {
+        height: 400px; /* Reduce image height for mobile */
+        max-width: 100%; /* Ensure it fits */
+      }
+
+      .cash-note {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        top: 5px;
+        left: 5px;
+      }
+
+      .cash-note.small {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        top: 60px;
+        left: 5px;
+      }
+
+      .dealer-features {
+        grid-template-columns: 1fr; /* Single column for mobile */
+        gap: 15px; /* Smaller gap */
+      }
+
+      .feature-box {
+        padding: 15px; /* Reduce padding */
+      }
+
+      .feature-box h3 {
+        font-size: 1.2rem; /* Smaller heading */
+      }
+
+      .feature-box p {
+        font-size: 0.9rem; /* Smaller paragraph */
+      }
+
+      .feature-box img {
+        height: 150px; /* Smaller image for mobile */
+      }
+    }
+
+    /* ====================================== */
+    /* Why Choose Section */
+    .why-choose-section {
+      padding: 50px 20px;
+      background-color: #ffffff; /* White background for contrast */
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .why-choose-section h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: #0a1d3c;
+    }
+
+    .why-choose-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .wc-item {
+      background-color: #f8f9fa;
+      padding: 30px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+
+    .wc-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .wc-item i {
+      font-size: 3rem;
+      color: #0a1d3c;
+      margin-bottom: 20px;
+    }
+
+    .wc-item h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #0a1d3c;
+    }
+
+    .wc-item p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* City Select */
+    .city-select {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 40px;
+    }
+
+    .city-select label {
+      font-weight: bold;
+      color: #333;
+      margin-right: 10px;
+    }
+
+    .city-select button {
+      background-color: #e9ecef;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .city-select button.active {
+      background-color: #ff8c00;
+      color: white;
+    }
+
+    .city-select button:hover {
+      background-color: #0a1d3c;
+      color: white;
+    }
+
+    .city-select select {
+      background-color: #e9ecef;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    /* Media Queries for Mobile and Tablet */
+
+    /* Tablet Styles (768px to 1024px) */
+    @media (max-width: 1024px) and (min-width: 768px) {
+      .why-choose-section {
+        padding: 40px 15px; /* Slightly reduce padding for tablet */
+      }
+
+      .why-choose-section h2 {
+        font-size: 2.2rem; /* Slightly smaller heading for tablet */
+        margin-bottom: 30px;
+      }
+
+      .why-choose-grid {
+        gap: 20px; /* Reduce gap for better fit on tablet */
+      }
+
+      .wc-item {
+        padding: 25px 15px; /* Reduce padding */
+      }
+
+      .wc-item i {
+        font-size: 2.5rem; /* Slightly smaller icon */
+      }
+
+      .wc-item h3 {
+        font-size: 1.3rem; /* Smaller subheading */
+      }
+
+      .city-select {
+        gap: 8px; /* Reduce gap */
+      }
+
+      .city-select button,
+      .city-select select {
+        padding: 8px 15px; /* Smaller buttons/select */
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Mobile Styles (up to 767px) */
+    @media (max-width: 767px) {
+      .why-choose-section {
+        padding: 30px 10px; /* Reduce padding for mobile */
+      }
+
+      .why-choose-section h2 {
+        font-size: 1.8rem; /* Smaller heading for mobile */
+        margin-bottom: 20px;
+      }
+
+      .why-choose-grid {
+        grid-template-columns: 1fr; /* Single column for mobile */
+        gap: 15px; /* Smaller gap */
+      }
+
+      .wc-item {
+        padding: 20px 10px; /* Reduce padding further */
+      }
+
+      .wc-item i {
+        font-size: 2rem; /* Smaller icon for mobile */
+        margin-bottom: 15px;
+      }
+
+      .wc-item h3 {
+        font-size: 1.2rem; /* Smaller subheading */
+        margin-bottom: 10px;
+      }
+
+      .wc-item p {
+        font-size: 0.9rem; /* Smaller paragraph text */
+      }
+
+      .city-select {
+        flex-direction: column; /* Stack vertically on mobile */
+        align-items: stretch; /* Full width items */
+        gap: 10px;
+      }
+
+      .city-select label {
+        margin-right: 0; /* Remove right margin since it's stacked */
+        margin-bottom: 5px;
+      }
+
+      .city-select button,
+      .city-select select {
+        padding: 10px; /* Adjust padding for touch */
+        font-size: 0.9rem;
+        width: 100%; /* Full width for better usability */
+      }
+    }
+  </style>
+  <!-- ============================================== -->
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <button>
+          <img src="/assests/img/Zac-logo (2).png" alt="" />
+        </button>
       </div>
-      <a href="models.html" class="cta-button">View BMW Models</a>
+      <button class="toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about Us.html">About Us</a></li>
+          <li><a href="buy a car.html">Car Brands</a></li>
+          <li><a href="Dealerships.html">Dealership</a></li>
+          <li><a href="Contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="anchor">
+        <a href="brand.html">Buy a Car</a>
+      </div>
+    </nav>
+    <!-- =========================================== -->
+    <div class="multi">
+      <h1>Buy the best car/rental deals on ZacMotors!</h1>
+      <p>Incredible Deals, Special Offers and Discount up to 30%</p>
+    </div>
+
+    <!-- ============================================== -->
+    <section class="dealer-hero-section">
+      <div class="dealer-hero">
+        <div class="dealer-hero-text">
+          <p class="tag">grow your margin</p>
+          <h1>your margin <span>up to 30%</span></h1>
+          <p class="sub">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+            distinctio, amet minus ipsa culpa dolorum rerum. Laborum quas non
+            quasi dolor, eius reiciendis dicta modi ex fugit doloremque
+            doloribus sapiente.
+          </p>
+          <a href="#" class="cta-btn">Join now</a>
+        </div>
+
+        <div class="dealer-hero-image">
+          <img src="benz.jpg" alt="Car Image" />
+          <div class="cash-note">₦</div>
+          <div class="cash-note small">30%</div>
+        </div>
+      </div>
+
+      <div class="dealer-features">
+        <div class="feature-box">
+          <h3>Reliable deals</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+            repellendus dolorem dolorum explicabo maiores aliquid distinctio
+            consectetur modi, officia esse.
+          </p>
+          <img src="car.jpg" alt="" />
+        </div>
+
+        <div class="feature-box">
+          <h3>Best prices</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
+            numquam odio iusto repellendus necessitatibus molestiae provident
+            dolores, odit ut quia.
+          </p>
+          <img src="car1.jpg" alt="" />
+        </div>
+
+        <div class="feature-box">
+          <h3>Huge selection</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit
+            assumenda recusandae ducimus voluptas temporibus error consectetur
+            laborum dolorem dolor ratione!
+          </p>
+          <img src="car2.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+    <!-- =============================== -->
+    <section class="why-choose-section">
+      <h2>Why choose us?</h2>
+
+      <div class="why-choose-grid">
+        <div class="wc-item">
+          <i class="fa-solid fa-lightbulb"></i>
+          <h3>No hidden surprises</h3>
+          <p>
+            We provide you with a detailed inspection report based on 200+
+            parameters, so you are sure that the car’s condition meets your
+            expectations.
+          </p>
+        </div>
+
+        <div class="wc-item">
+          <i class="fa-solid fa-hand-holding-dollar"></i>
+          <h3>100% Safe transaction</h3>
+          <p>
+            We check and verify all the documents of the car, so you don’t face
+            any challenges after the purchase.
+          </p>
+        </div>
+
+        <div class="wc-item">
+          <i class="fa-solid fa-headset"></i>
+          <h3>Support at every stage</h3>
+          <p>
+            Our professional managers will be there to answer questions, verify
+            information, and negotiate the price.
+          </p>
+        </div>
+
+        <div class="wc-item">
+          <i class="fa-solid fa-hand-holding-heart"></i>
+          <h3>Flexible purchase</h3>
+          <p>
+            We offer car loans so that this huge purchase doesn’t stretch you
+            financially.
+          </p>
+        </div>
+      </div>
+
+      <div class="city-select">
+        <label>Select your city:</label>
+        <button class="active">All</button>
+        <button>Lagos</button>
+        <button>Abuja</button>
+        <button>Ikeja</button>
+        <button>Oshodi</button>
+        <button>Ibadan</button>
+        <select>
+          <option>Other</option>
+        </select>
+      </div>
     </section>
 
-    <footer id="main-footer"></footer>
-    <script src="main.js"></script>
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/a3b2b3e6a9.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- ============================================= -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Column 1 -->
+        <div class="footer-col">
+          <img src="/assests/img/Zac-logo (2).png" alt="" />
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers with Us</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <h3>Connect With Us</h3>
+          <ul>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Advertise with Us</a></li>
+            <li><a href="#">Become a Dealer</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+          <h3>Others</h3>
+          <ul>
+            <li><a href="#">Health Insurance</a></li>
+            <li><a href="#">Team Insurance</a></li>
+            <li><a href="#">Life Insurance</a></li>
+            <li><a href="#">Car Sales Trends</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4 (Newsletter) -->
+        <div class="footer-col newsletter">
+          <h3>Get weekly updates by our newsletter</h3>
+          <form>
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+            <div class="terms">
+              <input type="checkbox" id="agree" required />
+              <label for="agree">I agree with the terms and conditions</label>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <p class="copyright">© ZacMotors Pvt Ltd</p>
+    </footer>
+
+    <script src="/main.js"></script>
   </body>
 </html>

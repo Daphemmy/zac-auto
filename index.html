@@ -6,14 +6,14 @@
     <title>Zac Motors</title>
   </head>
   <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
     crossorigin="anonymous"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.x/css/all.min.css"
   />
 
   <link rel="stylesheet" href="/style.css" />
@@ -36,14 +36,14 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about Us.html">About Us</a></li>
-          <li><a href="#">Dealership</a></li>
-          <li><a href="brand.html">Car Brands</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="buy a car.html">Buy a Car</a></li>
+          <li><a href="Dealerships.html">Dealership</a></li>
+          <li><a href="Contact.html">Contact Us</a></li>
         </ul>
       </div>
 
       <div class="anchor">
-        <a href="brand.html">Buy a Car</a>
+        <a href="buy a car.html">Buy a Car</a>
       </div>
     </nav>
 
@@ -94,8 +94,8 @@
       </div>
 
       <!-- Stagnant Hero Button -->
-      <div class="hero-btn-container">
-        <a href="#" class="hero-btn">Explore More</a>
+      <div class="zac-btn-container">
+        <a href="#" class="zac-btn">Explore More</a>
       </div>
 
       <!-- Navigation -->
@@ -106,36 +106,45 @@
         <span class="nav-dot"></span>
       </div>
     </section>
-
+    <!-- ============================================ -->
     <section class="search-box">
-      <select>
-        <option>Select Brand</option>
-        <option>BMW</option>
-        <option>Rolls-Royce</option>
-        <option>Mercedes</option>
-        <option>jaguar</option>
-      </select>
-
-      <select>
-        <option>Select Model</option>
-        <option>2024</option>
-        <option>2023</option>
-      </select>
-
-      <select>
-        <option>Select Location</option>
-        <option>Lagos</option>
-        <option>Abuja</option>
-      </select>
-
-      <select>
-        <option>Select Type of Car</option>
-        <option>Sports</option>
-        <option>SUV</option>
-        <option>Truck</option>
-      </select>
-
-      <button class="search-btn"><i class="fas fa-search"></i> Search</button>
+      <div class="search-buttons">
+        <a href="contact-img.jpeg" class="search-btn">
+          <i
+            class="fa-solid fa-phone-volume"
+            style="font-size: 3em; color: #0a1d3c; margin-bottom: 15px"
+          ></i>
+          <span>Contact Us</span>
+        </a>
+        <a href="Contact.html" class="search-btn">
+          <i
+            class="fa-solid fa-tag"
+            style="font-size: 3em; color: #0a1d3c; margin-bottom: 15px"
+          ></i>
+          <span>Price List</span>
+        </a>
+        <a href="buy a car.html" class="search-btn">
+          <i
+            class="fa-solid fa-cart-shopping"
+            style="font-size: 3em; color: #0a1d3c; margin-bottom: 15px"
+          ></i>
+          <span>Buy Now</span>
+        </a>
+        <a href="buy a car.html" class="search-btn">
+          <i
+            class="fa-solid fa-car"
+            style="font-size: 3em; color: #0a1d3c; margin-bottom: 15px"
+          ></i>
+          <span>Test Drive</span>
+        </a>
+        <a href="Dealerships.html" class="search-btn">
+          <i
+            class="fa-solid fa-book-open"
+            style="font-size: 3em; color: #0a1d3c; margin-bottom: 15px"
+          ></i>
+          <span>Brochure</span>
+        </a>
+      </div>
     </section>
 
     <!-- ======================================== -->
@@ -181,7 +190,7 @@
             <li>• Free Dubai Airport Pick-up</li>
           </ul>
           <div class="but">
-            <button>Book Now</button>
+            <button>Buy Now</button>
           </div>
         </div>
 
@@ -194,7 +203,7 @@
             <li>• 24/7 Roadside Support</li>
           </ul>
           <div class="but">
-            <button>Book Now</button>
+            <button>Buy Now</button>
           </div>
         </div>
 
@@ -211,7 +220,7 @@
             <li>• No Hidden Fees</li>
           </ul>
           <div class="but">
-            <button>Book Now</button>
+            <button>Buy Now</button>
           </div>
         </div>
 
@@ -224,7 +233,7 @@
             <li>• Convenient Drop-off Options</li>
           </ul>
           <div class="but">
-            <button>Book Now</button>
+            <button>Buy Now</button>
           </div>
         </div>
       </div>
@@ -236,7 +245,7 @@
           location.
         </p>
         <a
-          href="brand.html"
+          href="buy a car.html"
           style="color: #000000; text-decoration: none; font-weight: bold"
           >View Full Fleet →</a
         >
@@ -284,20 +293,63 @@
       </div>
     </section>
     <!-- =========================================== -->
-    <section class="screen">
-      <div class="heroo">
-        <div class="heroo-inner">
-          <h1 class="title">Start Your Journey Now</h1>
-          <p class="subtitle">
-            Establish your automotive adventure with us today. Explore our
-            premium vehicles, experienced VIP benefits, and pre-pay with secure
-            delivery for complete peace.
+    <section class="heroo">
+      <div class="service-container">
+        <!-- Auto Repair Card -->
+        <div class="service-box light">
+          <i class="fas fa-car"></i> <i class="fas fa-tag"></i>
+          <h3>LOOKING TO BUY A CAR?</h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio
+            minima impedit voluptate debitis fugiat eligendi unde aperiam
+            accusantium praesentium vero.
           </p>
-          <a class="cta" href="brand.html">Find Your Brand</a>
+          <a href="buy a car.html" class="btn-service">Book Appointment</a>
+        </div>
+
+        <!-- Accessories Card -->
+        <div class="service-box red">
+          <i class="fas fa-car-side"></i> <i class="fas fa-clock"></i>
+          <h3>LOOKING TO RENT A CAR?</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+            similique nemo nam pariatur sequi, incidunt beatae? Assumenda
+            numquam recusandae ut!
+          </p>
+          <a href="buy a car.html" class="btn-service">Book Appointment</a>
         </div>
       </div>
     </section>
     <!-- ============================================ -->
+
+    <section class="why-choose-us">
+      <h2>Why Our Customers Choose Us</h2>
+      <p class="subtitle">
+        As one of the best car dealers in Nigeria, we have the best price <br />
+        And we have constantly put our customers first.
+      </p>
+
+      <div class="choose-us-items">
+        <div class="item">
+          <i class="fas fa-car fa-icon"></i>
+          <h3>1,200+</h3>
+          <p>Vehicles Sold Yearly</p>
+        </div>
+
+        <div class="item">
+          <i class="fas fa-gauge-high fa-icon"></i>
+          <h3>98%</h3>
+          <p>Customer Satisfaction</p>
+        </div>
+
+        <div class="item">
+          <i class="fas fa-certificate fa-icon"></i>
+          <h3>100%</h3>
+          <p>Brand New Vehicles</p>
+        </div>
+      </div>
+    </section>
+    <!-- =========================================== -->
 
     <footer class="footer">
       <div class="footer-container">

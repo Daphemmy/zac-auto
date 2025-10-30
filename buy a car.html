@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brands</title>
+  </head>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- ============================================== -->
+  <style>
+    :root {
+      --bg: #f6f6f6;
+      --muted: #9aa0a6;
+      --accent: #2f7be6;
+      --dark: #222;
+    }
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      background: #ffffff;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: var(--dark);
+    }
+
+    /* ========================================== */
+    /* Base styles for the main-content section */
+    .main-content {
+      /* max-width: 1200px; */
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    .main-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #0a1d3c;
+      font-weight: bold;
+      padding: 30px;
+    }
+
+    /* Car grid layout */
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .car-card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(10, 29, 60, 0.12);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .car-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    }
+
+    .car-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .car-label {
+      padding: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #0a1d3c;
+      text-align: center;
+    }
+
+    .car-price {
+      padding: 0 10px 10px;
+      font-size: 1.1rem;
+      color: #f4a51c;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Bottom CTA and Footer */
+    .bottom-cta {
+      text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid #ffffff;
+    }
+
+    .cta-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #0a1d3c;
+    }
+    /* Media Queries for Mobile and Tablet */
+
+    /* Tablet Styles (768px to 1024px) */
+    @media (max-width: 1024px) and (min-width: 768px) {
+      .main-content {
+        padding: 15px; /* Slightly reduce padding for tablet */
+      }
+
+      .main-title {
+        font-size: 1.8rem; /* Slightly smaller title for tablet */
+        padding: 20px; /* Reduce padding */
+        margin-bottom: 15px;
+      }
+
+      .car-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet */
+        gap: 15px; /* Reduce gap */
+      }
+
+      .car-card {
+        /* No major changes, but ensure hover effects work */
+      }
+
+      .car-image {
+        height: 180px; /* Slightly smaller image height */
+      }
+
+      .car-label {
+        font-size: 1.1rem; /* Smaller label */
+        padding: 8px;
+      }
+
+      .car-price {
+        font-size: 1rem; /* Smaller price */
+        padding: 0 8px 8px;
+      }
+
+      .bottom-cta {
+        padding: 15px 0; /* Reduce padding */
+      }
+
+      .cta-title {
+        font-size: 1.3rem; /* Smaller CTA title */
+        margin-bottom: 15px;
+      }
+    }
+
+    /* Mobile Styles (up to 767px) */
+    @media (max-width: 767px) {
+      .main-content {
+        padding: 10px; /* Reduce padding for mobile */
+      }
+
+      .main-title {
+        font-size: 1.5rem; /* Smaller title for mobile */
+        padding: 15px; /* Reduce padding */
+        margin-bottom: 10px;
+      }
+
+      .car-grid {
+        grid-template-columns: 1fr; /* Single column for mobile */
+        gap: 10px; /* Smaller gap */
+      }
+
+      .car-card {
+        /* Ensure cards are touch-friendly */
+      }
+
+      .car-image {
+        height: 150px; /* Smaller image height for mobile */
+      }
+
+      .car-label {
+        font-size: 1rem; /* Smaller label */
+        padding: 8px;
+      }
+
+      .car-price {
+        font-size: 0.9rem; /* Smaller price */
+        padding: 0 8px 8px;
+      }
+
+      .bottom-cta {
+        padding: 10px 0; /* Reduce padding */
+      }
+
+      .cta-title {
+        font-size: 1.2rem; /* Smaller CTA title */
+        margin-bottom: 10px;
+      }
+    }
+    /* ====================================== */
+
+    /* Base styles for desktop (assuming screens wider than 1024px) */
+    /* Buy Now Section Styles */
+    .buy-now-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Inner Buy Container */
+    .inner-buy {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    /* Icon Key (Placeholder for Icon) */
+    .icon-key {
+      width: 50px;
+      height: 50px;
+      background-color: #0a1d3c; /* Dark blue background; replace with actual icon if needed */
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    /* Heading and Paragraph in Inner Buy */
+    .inner-buy h2 {
+      font-size: 24px;
+      color: #0a1d3c;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .inner-buy p {
+      font-size: 16px;
+      color: #666;
+      margin: 5px 0 0;
+    }
+
+    /* Buy Now Form */
+    .buy-now-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Row for Form Fields */
+    .row {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 15px;
+    }
+
+    .row label {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Full Width Elements */
+    .full-width {
+      margin-bottom: 15px;
+    }
+
+    .full-width input,
+    select {
+      width: 800px;
+      padding: 50px;
+    }
+
+    /* General Label Styles */
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    /* Input and Select Styles */
+    input,
+    select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    /* Contact Method Section */
+    .contact-method {
+      margin-bottom: 20px;
+    }
+
+    .contact-method p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .contact-method label {
+      display: inline-block;
+      margin-right: 20px;
+      font-weight: normal;
+    }
+
+    /* Submit Button */
+    .submit-btn {
+      padding: 12px 20px;
+      background-color: #ff7f11; /* Orange background */
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #0a1d3c; /* Dark blue on hover */
+    }
+
+    /* Disclaimer Section */
+    .disclaimer {
+      font-size: 14px;
+      color: #666;
+      margin-top: 20px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    /* Warning Icon */
+    .warning-icon {
+      color: #ff0000; /* Red color for warning */
+      margin-right: 10px;
+      font-size: 16px;
+    }
+
+    /* Tablet media query (769px to 1024px) */
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .buy-now-section {
+        margin: 30px auto;
+        padding: 15px;
+      }
+
+      .inner-buy {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .icon-key {
+        margin-bottom: 10px;
+        margin-right: 0;
+      }
+
+      .row {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .contact-method label {
+        margin-right: 15px;
+      }
+
+      .submit-btn {
+        align-self: center;
+      }
+    }
+
+    /* Mobile media query (up to 768px) */
+    @media (max-width: 768px) {
+      .buy-now-section {
+        margin: 20px 10px;
+        padding: 15px;
+      }
+
+      .inner-buy {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .icon-key {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+        margin-right: 0;
+      }
+
+      .inner-buy h2 {
+        font-size: 20px;
+      }
+
+      .inner-buy p {
+        font-size: 14px;
+      }
+
+      .row {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      input,
+      select {
+        padding: 12px; /* Larger touch targets for mobile */
+        font-size: 16px;
+      }
+
+      .contact-method label {
+        display: block;
+        margin-bottom: 10px;
+        margin-right: 0;
+      }
+
+      .submit-btn {
+        width: 100%;
+        align-self: stretch;
+      }
+
+      .disclaimer {
+        font-size: 12px;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .warning-icon {
+        margin-bottom: 5px;
+        margin-right: 0;
+      }
+    }
+
+    /* ======================================== */
+    .footer-logos {
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+    }
+
+    .footer-logoe {
+      height: 85px;
+      width: 85px;
+      object-fit: contain;
+      background-color: transparent;
+      filter: grayscale(100%);
+    }
+
+    /* Media Queries */
+
+    /* For screens up to 1028px (tablets) */
+    @media (max-width: 1028px) {
+      .car-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .main-title {
+        font-size: 1.8rem;
+      }
+
+      .car-label {
+        font-size: 1.1rem;
+      }
+
+      .car-price {
+        font-size: 1rem;
+      }
+
+      .cta-title {
+        font-size: 1.3rem;
+      }
+
+      .footer-logoe {
+        height: 40px;
+        width: 40px;
+      }
+
+      .footer-logos {
+        gap: 15px;
+      }
+    }
+
+    /* For screens up to 789px (smaller tablets/large phones) */
+    @media (max-width: 789px) {
+      .car-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .main-content {
+        padding: 15px;
+      }
+
+      .main-title {
+        font-size: 1.6rem;
+      }
+
+      .car-image {
+        height: 180px;
+      }
+
+      .car-label {
+        font-size: 1rem;
+        padding: 8px;
+      }
+
+      .car-price {
+        font-size: 0.9rem;
+        padding: 0 8px 8px;
+      }
+
+      .cta-title {
+        font-size: 1.2rem;
+      }
+
+      .footer-logos {
+        gap: 10px;
+      }
+
+      .footer-logoe {
+        width: 60px;
+        height: 60px;
+        gap: 40px;
+      }
+    }
+
+    /* For screens up to 368px (small phones) */
+    @media (max-width: 368px) {
+      .car-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .main-content {
+        padding: 10px;
+      }
+
+      .main-title {
+        font-size: 1.4rem;
+      }
+
+      .car-image {
+        height: 150px;
+      }
+
+      .car-label {
+        font-size: 0.9rem;
+        padding: 5px;
+      }
+
+      .car-price {
+        font-size: 0.8rem;
+        padding: 0 5px 5px;
+      }
+
+      .bottom-cta {
+        padding: 15px 0;
+      }
+
+      .cta-title {
+        font-size: 1.1rem;
+      }
+
+      .footer-logos {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .footer-logoe {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  </style>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <button>
+          <img src="/assests/img/Zac-logo (2).png" alt="" />
+        </button>
+      </div>
+      <button class="toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about Us.html">About Us</a></li>
+          <li><a href="buy a car.html">Car Brands</a></li>
+          <li><a href="Dealerships.html">Dealership</a></li>
+          <li><a href="Contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="anchor">
+        <a href="brand.html">Buy a Car</a>
+      </div>
+    </nav>
+
+    <!-- ============================================= -->
+    <div class="next">
+      <div class="hero-wrap">
+        <div class="hero-pill">
+          <div class="pill-slide">
+            <img src="/assests/img/serjan.jpg" alt="" />
+          </div>
+
+          <div class="pill-slide">
+            <img src="/assests/img/haryad-art.jpg" alt="" />
+          </div>
+
+          <div class="pill-slide">
+            <img src="/assests/img/harry-singh.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="main">
+        <div>
+          <h2 class="eyebrow">FIND YOUR DREAM<br />CAR TODAY</h2>
+
+          <p class="lead">
+            At ZacMotors, we offer a wide selection of high-quality vehicles to
+            suit every style and budget. Browse our inventory and choose a model
+            that fits your life.
+          </p>
+
+          <div class="features">
+            <div class="feature">
+              <div class="icon" aria-hidden="true">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3 12L5 8H19L21 12V17H19C19 18.1 18.1 19 17 19C15.9 19 15 18.1 15 17H9C9 18.1 8.1 19 7 19C5.9 19 5 18.1 5 17H3V12Z"
+                    fill="#6b7280"
+                  />
+                </svg>
+              </div>
+              <div class="txt">
+                <b>Quality Cars</b>Explore our collection of top-notch vehicles
+                that combine design and performance.
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="icon" aria-hidden="true">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"
+                    fill="#6b7280"
+                  />
+                </svg>
+              </div>
+              <div class="txt">
+                <b>Exception Service</b>Experience our personalized approach to
+                car buying and aftermarket support.
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="cta-row">
+            <button class="btn">Buy A Car</button>
+            <button class="btn ghost">Rent A Car</button>
+          </div> -->
+        </div>
+
+        <div>
+          <div class="right-card" aria-hidden="true">
+            <img
+              src="/assests/img/artiom-vallat-.jpg"
+              alt="Car gallery"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="thumbs" style="margin-left: 8px">
+            <div class="circle">
+              <img
+                src="/assests/img/valery-fedotov.jpg"
+                alt="wheel"
+                loading="lazy"
+              />
+            </div>
+            <div class="circle">
+              <img
+                src="/assests/img/eliastookit.jpg"
+                alt="interior"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ================================================= -->
+    <div class="container">
+      <div class="car-list">
+        <div class="car-card">
+          <img
+            src="toyota highlander.jpg"
+            alt="2017 TOYOTA Highlander"
+            class="car-img"
+          />
+          <div class="car-title">TOYOTA Highlander</div>
+          <div class="car-subinfo">
+            <span>78,480.00</span>
+            <span>Lagos</span>
+            <span class="icon">&#9825;</span>
+          </div>
+          <div class="car-price">&#8358;38,500,000.00</div>
+        </div>
+        <div class="car-card">
+          <img src="toyota rav4.jpg" alt="2012 TOYOTA RAV 4" class="car-img" />
+          <div class="car-title">2012 TOYOTA RAV 4</div>
+          <div class="car-subinfo">
+            <span>113,220.00</span>
+            <span>Lagos</span>
+            <span class="icon">&#9825;</span>
+          </div>
+          <div class="car-price">&#8358;16,500,000.00</div>
+        </div>
+        <div class="car-card">
+          <img src="BMW X6.jpg" alt="2025 BYD Han L" class="car-img" />
+          <div class="car-title">BMW X6</div>
+          <div class="car-subinfo">
+            <span>0.00</span>
+            <span>Lagos</span>
+            <span class="icon">&#9825;</span>
+          </div>
+          <div class="car-price">&#8358;90,000,000.00</div>
+        </div>
+
+        <div class="car-card">
+          <img
+            src="/assests/img/rolls-royce-white.jpg"
+            alt="2025 BYD Tang L"
+            class="car-img"
+          />
+          <div class="car-title">Rolls-Royce</div>
+          <div class="car-subinfo">
+            <span>95,000.00</span>
+            <span>Lagos</span>
+            <span class="icon">&#9825;</span>
+          </div>
+          <div class="car-price">&#8358;100,000,000.00</div>
+        </div>
+        <div class="car-card">
+          <img
+            src="/assests/img/jadon-johnson.jpg"
+            alt="2022"
+            class="car-img"
+          />
+          <div class="car-title">2022 G-Wagon</div>
+          <div class="car-subinfo">
+            <span>80,000.000</span>
+            <span>Lagos</span>
+            <span class="icon">&#9825;</span>
+          </div>
+          <div class="car-price">&#8358;31,000,000.00</div>
+        </div>
+        <div class="car-card">
+          <img
+            src="/assests/img/eduard-mihail-.jpg"
+            alt="2011 TOYOTA Highlander"
+            class="car-img"
+          />
+          <div class="car-title">Renault</div>
+          <div class="car-subinfo">
+            <span>95,000.00</span>
+            <span>Logos</span>
+            <span class="icon">&#9825;</span>
+          </div>
+          <div class="car-price">&#8358;22,000,000.00</div>
+        </div>
+        <div class="car-card">
+          <img
+            src="/assests/img/kenan-kukalj.jpg"
+            alt="2011 TOYOTA Highlander"
+            class="car-img"
+          />
+          <div class="car-title">BMW COUPE</div>
+          <div class="car-subinfo">
+            <span>95,000.00</span>
+            <span>Lagos</span>
+            <span class="icon">&#9825;</span>
+          </div>
+          <div class="car-price">&#8358;30,000,000.00</div>
+        </div>
+        <div class="car-card">
+          <img
+            src="/assests/img/ranamotorworks.jpg"
+            alt="2011 TOYOTA Highlander"
+            class="car-img"
+          />
+          <div class="car-title">Ford Suv</div>
+          <div class="car-subinfo">
+            <span>95,000.00</span>
+            <span>Lagos</span>
+            <span class="icon">&#9825;</span>
+          </div>
+          <div class="car-price">&#8358;50,000,000.00</div>
+        </div>
+        <div class="car-card">
+          <img
+            src="/Toyota camry.jpg"
+            alt="2011 TOYOTA Highlander"
+            class="car-img"
+          />
+          <div class="car-title">Toyota Camry</div>
+          <div class="car-subinfo">
+            <span>95,000.00</span>
+            <span>Lagos</span>
+            <span class="icon">&#9825;</span>
+          </div>
+          <div class="car-price">&#8358;35,000,000.00</div>
+        </div>
+      </div>
+    </div>
+    <!-- ============================================ -->
+
+    <section class="buy-now-section">
+      <div class="inner-buy">
+        <div class="icon-key"></div>
+        <div>
+          <h2>BUY NOW</h2>
+          <p>Apply Now To Buy A New Car</p>
+        </div>
+      </div>
+
+      <form class="buy-now-form">
+        <div class="row">
+          <label>
+            Name*<br />
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Email*<br />
+            <input type="email" name="email" required />
+          </label>
+        </div>
+
+        <div class="row">
+          <label>
+            State*<br />
+            <input type="text" name="state" required />
+          </label>
+          <label>
+            City/Province*<br />
+            <input type="text" name="city" required />
+          </label>
+        </div>
+
+        <div class="row">
+          <label>
+            Select Maker*<br />
+            <select name="make" required>
+              <option value="" disabled selected>Select Make*</option>
+              <option value="Benz">Benz</option>
+              <option value="Jaguar">Jaguar</option>
+              <option value="Rolls Royce">Rolls Royce</option>
+              <option value="BMW">BMW</option>
+              <option value="Ford">Ford</option>
+              <option value="Toyota">Toyota</option>
+              <option value="Renault">Renault</option>
+            </select>
+          </label>
+
+          <label>
+            Model No.*<br />
+            <input
+              type="text"
+              name="model"
+              placeholder="e.g. GLE350"
+              required
+            />
+          </label>
+
+          <label>
+            Transmission*<br />
+            <select name="transmission" required>
+              <option value="" disabled selected>Transmission*</option>
+              <option value="Automatic">Automatic</option>
+              <option value="Manual">Manual</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="full-width">
+          Select preferred meeting time*<br />
+          <select name="meeting-time" required>
+            <option value="" disabled selected>
+              Select preferred meeting time*
+            </option>
+            <option value="9am-12pm">9am - 12pm</option>
+            <option value="12pm-3pm">12pm - 3pm</option>
+            <option value="3pm-6pm">3pm - 6pm</option>
+          </select>
+        </label>
+
+        <label class="full-width">
+          When do you plan to buy the car?<br />
+          <select name="buy-timing" required>
+            <option value="" disabled selected>Select option</option>
+            <option value="Today">Today</option>
+            <option value="1week">1 Week</option>
+            <option value="2weeks">2 Weeks</option>
+            <option value="3weeks">3 Weeks</option>
+            <option value="1month">A Month</option>
+          </select>
+        </label>
+
+        <label class="full-width current-owned-car">
+          <strong>Current Owned Car?</strong><br />
+          <select name="current-car" required>
+            <option value="" disabled selected>Select option</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </label>
+
+        <div class="contact-method">
+          <p>How would you like us to contact you?</p>
+          <label
+            ><input type="radio" name="contact-method" value="phone" checked />
+            Phone</label
+          >
+          <label
+            ><input type="radio" name="contact-method" value="mail" />
+            Mail</label
+          >
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Now</button>
+
+        <p class="disclaimer">
+          <span class="warning-icon">&#9888;</span>
+          The information that you submit will not be used or distributed for
+          any reason other than to fulfill your request.
+        </p>
+      </form>
+    </section>
+
+    <!-- ================================================== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Column 1 -->
+        <div class="footer-col">
+          <img src="/assests/img/Zac-logo (2).png" alt="" />
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers with Us</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <h3>Connect With Us</h3>
+          <ul>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Advertise with Us</a></li>
+            <li><a href="#">Become a Dealer</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+          <h3>Others</h3>
+          <ul>
+            <li><a href="#">Health Insurance</a></li>
+            <li><a href="#">Team Insurance</a></li>
+            <li><a href="#">Life Insurance</a></li>
+            <li><a href="#">Car Sales Trends</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4 (Newsletter) -->
+        <div class="footer-col newsletter">
+          <h3>Get weekly updates by our newsletter</h3>
+          <form>
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+            <div class="terms">
+              <input type="checkbox" id="agree" required />
+              <label for="agree">I agree with the terms and conditions</label>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <p class="copyright">© ZacMotors Pvt Ltd</p>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>
